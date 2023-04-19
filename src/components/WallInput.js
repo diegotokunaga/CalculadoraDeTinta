@@ -52,7 +52,7 @@ function WallInput(props) {
       <h3>Parede {props.index + 1}</h3>
       <div className="wall__style">
         <div className="eachWall__style">
-        <label htmlFor={`width${props.index}`}>Largura: </label>
+        <label htmlFor={`width${props.index}`}>Largura(m²): </label>
         <input
           type="number"
           id={`width${props.index}`}
@@ -63,7 +63,7 @@ function WallInput(props) {
           onChange={handleWidthChange}
         />
         <br />
-        <label htmlFor={`height${props.index}`}>Altura: </label>
+        <label htmlFor={`height${props.index}`}>Altura(m²): </label>
         <input
           type="number"
           id={`height${props.index}`}
@@ -74,7 +74,7 @@ function WallInput(props) {
           onChange={handleHeightChange}
         />
         <br />
-        <label htmlFor={`windows${props.index}`}>Janelas: </label>
+        <label htmlFor={`windows${props.index}`}>Quantidade de Janelas: </label>
         <input
           type="number"
           id={`windows${props.index}`}
@@ -84,7 +84,7 @@ function WallInput(props) {
           onChange={handleWindowsChange}
         />
         <br />
-        <label htmlFor={`doors${props.index}`}>Portas: </label>
+        <label htmlFor={`doors${props.index}`}>Quantidade de Portas: </label>
         <input
           type="number"
           id={`doors${props.index}`}

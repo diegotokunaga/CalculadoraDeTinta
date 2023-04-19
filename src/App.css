@@ -2,7 +2,7 @@
   text-align: center;
   font-family: sans-serif;
   box-sizing: border-box;
-  background-color: rgb(38, 99, 156);
+  background-color: rgb(27, 117, 202);
 }
 
 input {
@@ -19,7 +19,7 @@ button {
   cursor: pointer;
   border-radius: 4px;
   height: 35px;
-  width: 100px;
+  width: 150px;
   border: none;
   background-color: blue;
   color: white;

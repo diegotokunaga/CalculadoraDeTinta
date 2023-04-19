@@ -10,10 +10,36 @@ function PaintCalculator() {
   ]);
 
   const handleWallChange = (index, values) => {
+    let area = values.width * values.height;
+    if (area < 1 || area > 50) {
+      alert("A área da parede deve estar entre 1 e 50 metros quadrados.");
+      return;
+    }
+
+    let windowTotal = values.windows * 2.4;
+    let doorTotal = values.doors * 1.52;
+    let maxWindowDoorArea = area / 2;
+    if (windowTotal + doorTotal > maxWindowDoorArea) {
+      alert(
+        "A área total das janelas e portas não pode ser maior que 50% da área da parede."
+      );
+      return;
+    }
+
+    if (values.doors > 0 && values.height < 2.20) {
+      alert(
+        "A altura da parede com porta deve ser, no mínimo, 30cm maior que a altura da porta."
+      );
+      return;
+    }
+
     setWalls([...walls.slice(0, index), values, ...walls.slice(index + 1)]);
   };
 
   const calculatePaint = () => {
+    if (walls.some(wall => wall.width === 0 || wall.height === 0 || wall.windows === 0 || wall.doors === 0)) {
+      return "Por favor, preencha todos os campos antes de calcular a quantidade de tinta necessária.";
+    }
     let totalArea = 0;
     let windowArea = 0;
     let doorArea = 0;
